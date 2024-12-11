@@ -1,11 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES5",
     "module": "CommonJS",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": ".build"
+    "outDir": ".build",
+    "rootDir": "./",
+    "lib": ["ES2015", "ES2017", "DOM"],
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "preserveConstEnums": true,
+
+
   },
   "exclude": ["node_modules", ".serverless", ".build"]
 }
