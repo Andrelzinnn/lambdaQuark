@@ -1,0 +1,25 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: aigen
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: Quark
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+  
+
+functions:
+  hello:
+    handler: src/handlers/handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+          cors: true
+          private: false
+      
+
+plugins:
+  - serverless-offline
